@@ -1,0 +1,165 @@
+/* --- COLOR PALETTE --- */
+:root {
+    --primary-blue: #003366; /* Deep Navy Blue */
+    --accent-red: #cc0000;   /* Vibrant Red */
+    --bg-light: #f0f2f5;     /* Very light gray/blue background */
+    --text-dark: #333333;
+    --card-bg: #ffffff;
+}
+
+/* --- GENERAL STYLES --- */
+body {
+    body {
+    background-color: #f4f4f9; /* The background color outside your CV */
+    margin: 0;
+    padding: 0;
+}
+
+/* This is the class that wraps all your content */
+.container {
+    max-width: 800px; /* Limits the width of your CV */
+    margin: 40px auto; /* 'auto' centers the block horizontally */
+    background-color: white; /* Your CV paper color */
+    padding: 40px; /* Space inside the edges */
+    box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Optional: Adds a subtle shadow to make it look like a paper */
+}
+
+
+h2 {
+    color: var(--primary-blue);
+    border-bottom: 3px solid var(--accent-red); /* Red underline for headers */
+    padding-bottom: 10px;
+    margin-top: 40px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* --- HEADER LAYOUT (Image + Text) --- */
+.main-header {
+    background-color: var(--primary-blue);
+    color: white;
+    padding: 40px 20px;
+    display: flex; /* Puts image and text side by side */
+    align-items: center; /* Centers vertically */
+    gap: 30px;
+}
+
+.profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* Makes image circular */
+    border: 5px solid white; /* White ring around photo */
+    object-fit: cover; /* Ensures photo doesn't stretch */
+}
+
+.header-text h1 {
+    color: white;
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+.header-text .title {
+    font-size: 1.5rem;
+    color: #dbeafe; /* Light blue subtitle */
+    font-weight: 300;
+    margin-bottom: 10px;
+}
+
+.contact p { margin: 5px 0; font-size: 0.9rem; }
+.github-link {
+    color: var(--accent-red);
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 5px;
+}
+.github-link:hover { text-decoration: underline; }
+
+/* --- SKILLS BOXES (Updated colors) --- */
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 0;
+    list-style: none;
+}
+
+.skill-box {
+    background-color: var(--card-bg);
+    border: 1px solid var(--primary-blue);
+    color: var(--primary-blue);
+    padding: 8px 20px;
+    border-radius: 20px; /* Pill shape */
+    font-weight: 600;
+}
+
+/* --- PROJECT CARDS (CSS Grid) --- */
+.projects-grid {
+    display: grid;
+    /* Creates 3 columns that auto-adjust size */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.project-card {
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    overflow: hidden; /* Keeps image inside rounded corners */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+}
+
+.project-card img {
+    width: 100%;
+    height: 200px; /* Fixed height for images */
+    object-fit: cover; /* Ensures image fills space correctly */
+}
+
+.card-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.project-card h3 {
+    margin: 0 0 10px 0;
+    color: var(--primary-blue);
+}
+
+.project-card p {
+    font-size: 0.9rem;
+    color: #666;
+    flex-grow: 1; /* Pushes button to the bottom */
+}
+
+/* Button styling */
+.btn {
+    display: inline-block;
+    background-color: var(--accent-red);
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 15px;
+    text-align: center;
+}
+.btn:hover {
+    background-color: #990000; /* Darker red on hover */
+}
+
+/* --- RESPONSIVENESS (Mobile) --- */
+@media (max-width: 768px) {
+    .main-header {
+        flex-direction: column; /* Stack photo and text vertically */
+        text-align: center;
+    }
+    .header-text h1 { font-size: 2rem; }
